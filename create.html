@@ -11,13 +11,14 @@
       <h1 class="header__title">Create</h1>
     </header>
 
-    <main>
-      <form action="">
+    <main class="main-grid-1">
+      <form class="form" action="">
         <label for="textarea1"
           >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
           placeat, reiciendis natus dolor!</label
         >
         <textarea
+          class="form__text-input"
           name="textarea1"
           id="textarea1"
           cols="30"
@@ -30,6 +31,7 @@
           placeat, reiciendis natus dolor!</label
         >
         <textarea
+          class="form__text-input"
           name="textarea2"
           id="textarea2"
           cols="30"
@@ -41,12 +43,17 @@
           >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
           placeat, reiciendis natus dolor!</label
         >
-        <input type="text" name="tags-input" id="tags-input" required />
+        <input
+          class="form__text-input"
+          type="text"
+          name="tags-input"
+          id="tags-input"
+          required
+        />
 
-        <input type="submit" value="Submit" />
+        <input class="button" type="submit" value="Submit" />
       </form>
     </main>
-
     <footer class="navigation">
       <a class="navigation__link center" href="index.html"
         ><img class="navigation__icon" src="images/home.svg" alt="home"

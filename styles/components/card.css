@@ -18,3 +18,10 @@
   right: 5px;
   top: -20px;
 }
+
+.card__text {
+}
+
+.card__text--no-display {
+  display: none;
+}

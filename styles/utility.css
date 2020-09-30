@@ -4,6 +4,6 @@
   align-items: center;
 }
 
-.grid-2columns {
-  grid-template-columns: 1fr 1fr;
+.grid-span2 {
+  grid-column: 1/-1;
 }
