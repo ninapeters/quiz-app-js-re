@@ -1,0 +1,13 @@
+.tag-list {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+}
+
+.tag-list__item {
+  padding: 5px;
+  margin: 3px;
+  background-color: var(--primary);
+  border-radius: 4px;
+  box-shadow: 2px 2px 6px #888888;
+}
