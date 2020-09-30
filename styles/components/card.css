@@ -25,3 +25,13 @@
 .card__text--no-display {
   display: none;
 }
+
+/* 
+Way to change svg-color??
+
+.card__bookmark-icon--frame {
+  fill: var(--primary);
+}
+.card__bookmark-icon--filling {
+  fill: var(--primary);
+} */

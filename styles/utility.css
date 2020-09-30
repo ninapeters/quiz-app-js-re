@@ -4,6 +4,6 @@
   align-items: center;
 }
 
-.grid-span2 {
+.grid-span {
   grid-column: 1/-1;
 }
