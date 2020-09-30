@@ -1,17 +1,15 @@
 .card {
-  height: 300px;
   background: var(--background);
   padding: 25px;
   border-radius: 15px;
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
 }
 
 .card__title {
-  margin-bottom: 5px;
   font-size: 135%;
-}
-
-.card__text {
 }
 
 .card__bookmark-icon {
@@ -19,7 +17,4 @@
   height: 60px;
   right: 5px;
   top: -20px;
-}
-
-.card__bookmark-icon--filled {
 }
