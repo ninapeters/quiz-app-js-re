@@ -1,4 +1,4 @@
-.card-grid {
+.main-grid {
   overflow-y: scroll;
   display: grid;
   align-content: start;
@@ -7,11 +7,11 @@
 }
 
 /* fix padding-bottom rendering on grid: */
-.card-grid > *:last-child {
+.main-grid > *:last-child {
   position: relative;
 }
 
-.card-grid > *:last-child:after {
+.main-grid > *:last-child:after {
   content: '';
   display: block;
   position: absolute;

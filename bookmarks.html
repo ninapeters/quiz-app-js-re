@@ -4,55 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <title>Bookmarks</title>
+    <title>Quiz-App | Bookmarks</title>
   </head>
   <body>
-    <header class="header"><h1 class="header__title">Bookmarks</h1></header>
+    <header class="header center">
+      <h1 class="header__title">Bookmarks</h1>
+    </header>
 
-    <main>
-      <section class="question-card">
-        <h2>Question:</h2>
-        <img src="" alt="" class="bookmark-icon" />
-        <p>
+    <main class="main-grid">
+      <section class="card">
+        <h2 class="card__title">Question:</h2>
+        <img
+          src="images/bookmark-filled.svg"
+          alt="bookmark"
+          fill="currentColor"
+          class="card__bookmark-icon"
+        />
+        <p class="card__text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Exercitationem non, architecto commodi quod id asper.
+          Exercitationem non, architecto commodi quod id asper?
         </p>
-        <button>Show Answer</button>
+        <button class="button">Show Answer</button>
         <ul class="tag-list">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li class="tag-list__item">CSS</li>
+          <li class="tag-list__item">HTML</li>
+          <li class="tag-list__item">Position</li>
+          <li class="tag-list__item">BEM</li>
         </ul>
       </section>
-
-      <section class="question-card">
-        <h2>Question:</h2>
-        <img src="" alt="" class="bookmark-icon" />
-        <p>
+      <section class="card">
+        <h2 class="card__title">Question:</h2>
+        <img
+          src="images/bookmark-filled.svg"
+          alt="bookmark"
+          fill="currentColor"
+          class="card__bookmark-icon"
+        />
+        <p class="card__text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Exercitationem non, architecto commodi quod id asper.
+          Exercitationem non, architecto commodi quod id asper?
         </p>
-        <button>Show Answer</button>
+        <button class="button">Show Answer</button>
         <ul class="tag-list">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li class="tag-list__item">CSS</li>
+          <li class="tag-list__item">HTML</li>
+          <li class="tag-list__item">Position</li>
+          <li class="tag-list__item">BEM</li>
         </ul>
       </section>
     </main>
 
-    <footer>
-      <a href="index.html" class="home-link"><img src="" alt="home-link" /></a>
-      <a href="bookmarks.html" class="bookmarks-link"
-        ><img src="" alt="bookmarks-link"
+    <footer class="navigation">
+      <a class="navigation__link center" href="index.html"
+        ><img class="navigation__icon" src="images/home.svg" alt="home"
       /></a>
-      <a href="create.html" class="create-link"
-        ><img src="" alt="create-link"
+      <a class="navigation__link center" href="bookmarks.html"
+        ><img
+          class="navigation__icon"
+          src="images/bookmark-filled.svg"
+          alt="bookmarks"
       /></a>
-      <a href="profile.html" class="profile-link"
-        ><img src="" alt="profile-link"
+      <a class="navigation__link center" href="create.html"
+        ><img class="navigation__icon" src="images/create.svg" alt="create"
+      /></a>
+      <a class="navigation__link center" href="profile.html"
+        ><img class="navigation__icon" src="images/profile.svg" alt="profile"
       /></a>
     </footer>
   </body>
