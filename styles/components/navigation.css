@@ -11,4 +11,5 @@
 
 .navigation__icon {
   filter: invert(95%);
+  height: 38px;
 }

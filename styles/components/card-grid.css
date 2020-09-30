@@ -3,7 +3,7 @@
   display: grid;
   align-content: start;
   gap: 20px;
-  padding: 20px 8px;
+  padding: 30px 20px;
 }
 
 /* fix padding-bottom rendering on grid: */

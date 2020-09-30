@@ -15,5 +15,6 @@
 }
 
 .header__title {
-  font-size: 22px;
+  font-size: 200%;
+  text-transform: uppercase;
 }

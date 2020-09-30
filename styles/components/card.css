@@ -1,4 +1,25 @@
 .card {
   height: 300px;
   background: var(--background);
+  padding: 25px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.card__title {
+  margin-bottom: 5px;
+  font-size: 135%;
+}
+
+.card__text {
+}
+
+.card__bookmark-icon {
+  position: absolute;
+  height: 60px;
+  right: 5px;
+  top: -20px;
+}
+
+.card__bookmark-icon--filled {
 }
