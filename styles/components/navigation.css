@@ -1,0 +1,14 @@
+.navigation {
+  display: grid;
+  grid-auto-flow: column;
+  background: var(--primary);
+}
+
+.navigation__link {
+  color: var(--text-color2);
+  text-decoration: none;
+}
+
+.navigation__icon {
+  filter: invert(95%);
+}
