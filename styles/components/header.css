@@ -1,0 +1,15 @@
+.header {
+  position: relative;
+  background: var(--primary);
+  color: var(--text-color2);
+}
+
+.header:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  height: 4px;
+  left: 0;
+  width: 100%;
+  background-image: linear-gradient(rgba(70, 0, 30, 0.5), transparent);
+}
