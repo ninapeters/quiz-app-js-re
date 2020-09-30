@@ -1,8 +1,9 @@
 .header {
+  display: grid;
+  place-items: center;
   position: relative;
   background: var(--primary);
   color: var(--text-color2);
-  text-align: center;
 }
 
 .header:after {
@@ -12,5 +13,9 @@
   height: 4px;
   left: 0;
   width: 100%;
-  background-image: linear-gradient(rgba(70, 0, 30, 0.5), transparent);
+  background-image: linear-gradient(var(--gradient), transparent);
+}
+
+.header__title {
+  font-size: 22px;
 }
