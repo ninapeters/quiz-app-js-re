@@ -22,12 +22,8 @@
 .card__text {
 }
 
-.card__text--no-display {
-  display: none;
-}
-
 /* 
-Way to change svg-color??
+way to change svg-color??
 
 .card__bookmark-icon--frame {
   fill: var(--primary);
