@@ -1,5 +1,5 @@
 @import './basic.css';
-@import './colors.css';
+@import './variables.css';
 @import './utility.css';
 
 @import './components/button.css';

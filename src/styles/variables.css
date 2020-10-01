@@ -1,4 +1,5 @@
 :root {
+  /* === Colors === */
   --primary: #7ed174;
   --gradient: #1a581388;
   --background: #7dd17459;
@@ -6,4 +7,6 @@
   --text-color1: #0a0a0ade;
   --text-color2: #fbfff2;
   --shadow: #888888;
+
+  /* === Paddings === */
 }
