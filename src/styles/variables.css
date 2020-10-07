@@ -1,7 +1,7 @@
 /* === Colors === */
 
 .lightmode {
-  --primary: #7ed174;
+  --primary: #6bd160;
   --gradient: #1a581388;
   --background-main: #f5fff4;
   --background: #7dd17459;
@@ -14,14 +14,14 @@
 }
 
 .darkmode {
-  --primary: #7ed174;
+  --primary: #0f7703;
   --gradient: #1a581388;
-  --background-main: #0b3108;
-  --background: #7dd17459;
+  --background-main: #1c221c;
+  --background: #0c410688;
   --bookmark-icon: #28941c;
   --bookmark-icon--filling: #c4eec0;
 
-  --text-color1: #0a0a0ade;
-  --text-color2: #fbfff2;
-  --shadow: #888888;
+  --text-color1: #dde6ca;
+  --text-color2: #dde6ca;
+  --shadow: #082208b4;
 }

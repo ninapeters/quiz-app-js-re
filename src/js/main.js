@@ -1,5 +1,8 @@
 // ###### querySelectors ######
 
+// ------ Body ------
+const body = document.querySelector('[data-js="body"]')
+
 // ------ Header ------
 const headerHome = document.querySelector('[data-js="header-home"]')
 const headerBookmarks = document.querySelector('[data-js="header-bookmarks"]')
@@ -23,22 +26,24 @@ const navIconProfile = document.querySelector('[data-js="nav-icon--profile"]')
 // ------ Bookmark Icons ------
 const bookmarkIcon = document.querySelector('[data-js="bookmark-icon"]')
 
-// ------ Answer Buttons ------
+// ------ Answer Buttons and Answer Text------
 const showAnswerButton = document.querySelector(
   '[data-js="show-answer-button"]'
 )
 const hideAnswerButton = document.querySelector(
   '[data-js="hide-answer-button"]'
 )
-
-// ------ Answer Text ------
 const answerText = document.querySelector('[data-js="answer-text"]')
 
-// ------ Create Form: Submit Button and Text Inputs ------
+// ------ Form Submit Button and Text Inputs ------
 const formSubmitButton = document.querySelector(
   '[data-js="form-submit-button"]'
 )
 const form = document.querySelector('[data-js="form"]')
+
+// ------ Dark and Light Mode Buttons ------
+const lightmodeButton = document.querySelector('[data-js="lightmode-button"]')
+const darkmodeButton = document.querySelector('[data-js="darkmode-button"]')
 
 // ###### CALL FUNCTIONS ######
 
@@ -57,6 +62,10 @@ hideAnswerButton.addEventListener('click', hideAnswerSection)
 
 // ====== addEventListener for form submit button and arrow function to reset form ======
 formSubmitButton.addEventListener('click', () => form.reset())
+
+// ====== addEventListener for dark and lightmode buttons to switch between ======
+lightmodeButton.addEventListener('click', switchToLightmode)
+darkmodeButton.addEventListener('click', switchToDarkmode)
 
 // ###### FUNCTION DECLARATIONS ######
 
@@ -159,17 +168,23 @@ function hideAnswerSection() {
   display(showAnswerButton)
 }
 
-// ------ toggle (=show/hide) answer text ------
-function toggleAnswerText() {
-  answerText.classList.toggle('d-none')
+// ====== switch color theme to lightmode/darkmode ======
+
+function switchToDarkmode() {
+  displayNone(darkmodeButton)
+  display(lightmodeButton)
+  body.classList.add('darkmode')
+  body.classList.remove('lightmode')
 }
 
-// // ------ reset form text input ------
-// function resetFormTextInput() {
-//   formTextInput.reset()
-// }
+function switchToLightmode() {
+  display(darkmodeButton)
+  displayNone(lightmodeButton)
+  body.classList.remove('darkmode')
+  body.classList.add('lightmode')
+}
 
-// ====== displayNone, display and displayToggle ======
+// ====== displayNone and display ======
 function displayNone(selector) {
   selector.classList.add('d-none')
 }
