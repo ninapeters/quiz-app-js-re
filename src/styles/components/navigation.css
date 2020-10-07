@@ -1,6 +1,7 @@
 .navigation {
-  display: grid;
-  grid-auto-flow: column;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background: var(--primary);
 }
 

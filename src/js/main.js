@@ -1,43 +1,42 @@
-console.log('Hello World')
+// ###### querySelectors ######
 
-// [data-js="header-home"]
-// [data-js="header-bookmarks"]
-// [data-js="header-create"]
-// [data-js="header-profile"]
-
-// [data-js="nav-home"]
-// [data-js="nav-bookmarks"]
-// [data-js="nav-create"]
-// [data-js="nav-profile"]
-
-// [data-js="home-main"]
-// [data-js="home-icon"]
+// ------ Header ------
 
 const headerHome = document.querySelector('[data-js="header-home"]')
 const headerBookmarks = document.querySelector('[data-js="header-bookmarks"]')
 const headerCreate = document.querySelector('[data-js="header-create"]')
 const headerProfile = document.querySelector('[data-js="header-profile"]')
 
+// ------ Main ------
+
 const mainHome = document.querySelector('[data-js="main-home"]')
 const mainBookmarks = document.querySelector('[data-js="main-bookmarks"]')
 const mainCreate = document.querySelector('[data-js="main-create"]')
 const mainProfile = document.querySelector('[data-js="main-profile"]')
 
-const navHome = document.querySelector('[data-js="nav-home"]')
-const navBookmarks = document.querySelector('[data-js="nav-bookmarks"]')
-const navCreate = document.querySelector('[data-js="nav-create"]')
-const navProfile = document.querySelector('[data-js="nav-profile"]')
+// ------ Nav Icons ------
 
-const iconHome = document.querySelector('[data-js="icon-home"]')
-const iconBookmarks = document.querySelector('[data-js="icon-bookmarks"]')
-const iconCreate = document.querySelector('[data-js="icon-create"]')
-const iconProfile = document.querySelector('[data-js="icon-profile"]')
+const navIconHome = document.querySelector('[data-js="nav-icon--home"]')
+const navIconBookmarks = document.querySelector(
+  '[data-js="nav-icon--bookmarks"]'
+)
+const navIconCreate = document.querySelector('[data-js="nav-icon--create"]')
+const navIconProfile = document.querySelector('[data-js="nav-icon--profile"]')
 
-navHome.addEventListener('click', navigateToHome)
-navBookmarks.addEventListener('click', navigateToBookmarks)
-navCreate.addEventListener('click', navigateToCreate)
-navProfile.addEventListener('click', navigateToProfile)
+// ###### CALL FUNCTIONS ######
 
+// ====== addEventListeners for navigation ======
+
+navIconHome.addEventListener('click', navigateToHome)
+navIconBookmarks.addEventListener('click', navigateToBookmarks)
+navIconCreate.addEventListener('click', navigateToCreate)
+navIconProfile.addEventListener('click', navigateToProfile)
+
+// ###### FUNCTION DECLARATIONS ######
+
+// ====== function declarations for navigation ======
+
+// ------ navigate to home page ------
 function navigateToHome() {
   display(headerHome)
   displayNone(headerBookmarks)
@@ -49,12 +48,13 @@ function navigateToHome() {
   displayNone(mainCreate)
   displayNone(mainProfile)
 
-  activateIcon(iconHome)
-  deactivateIcon(iconBookmarks)
-  deactivateIcon(iconCreate)
-  deactivateIcon(iconProfile)
+  activateIcon(navIconHome)
+  deactivateIcon(navIconBookmarks)
+  deactivateIcon(navIconCreate)
+  deactivateIcon(navIconProfile)
 }
 
+// ------ navigate to bookmarks page ------
 function navigateToBookmarks() {
   displayNone(headerHome)
   display(headerBookmarks)
@@ -66,12 +66,13 @@ function navigateToBookmarks() {
   displayNone(mainCreate)
   displayNone(mainProfile)
 
-  dactivateIcon(iconHome)
-  activateIcon(iconBookmarks)
-  deactivateIcon(iconCreate)
-  deactivateIcon(iconProfile)
+  deactivateIcon(navIconHome)
+  activateIcon(navIconBookmarks)
+  deactivateIcon(navIconCreate)
+  deactivateIcon(navIconProfile)
 }
 
+// ------ navigate to create page ------
 function navigateToCreate() {
   displayNone(headerHome)
   displayNone(headerBookmarks)
@@ -83,12 +84,13 @@ function navigateToCreate() {
   display(mainCreate)
   displayNone(mainProfile)
 
-  dactivateIcon(iconHome)
-  deactivateIcon(iconBookmarks)
-  activateIcon(iconCreate)
-  deactivateIcon(iconProfile)
+  deactivateIcon(navIconHome)
+  deactivateIcon(navIconBookmarks)
+  activateIcon(navIconCreate)
+  deactivateIcon(navIconProfile)
 }
 
+// ------ navigate to profile page ------
 function navigateToProfile() {
   displayNone(headerHome)
   displayNone(headerBookmarks)
@@ -100,11 +102,13 @@ function navigateToProfile() {
   displayNone(mainCreate)
   display(mainProfile)
 
-  dactivateIcon(iconHome)
-  deactivateIcon(iconBookmarks)
-  deactivateIcon(iconCreate)
-  activateIcon(iconProfile)
+  deactivateIcon(navIconHome)
+  deactivateIcon(navIconBookmarks)
+  deactivateIcon(navIconCreate)
+  activateIcon(navIconProfile)
 }
+
+// ====== displayNone and display ======
 
 function displayNone(selector) {
   selector.classList.add('d-none')
@@ -112,6 +116,8 @@ function displayNone(selector) {
 function display(selector) {
   selector.classList.remove('d-none')
 }
+
+// ====== activate and deactivate navigation icon ======
 
 function activateIcon(selector) {
   selector.classList.add('navigation__icon--active')
