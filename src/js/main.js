@@ -37,7 +37,6 @@ const answerText = document.querySelector('[data-js="answer-text"]')
 // ###### CALL FUNCTIONS ######
 
 // ====== addEventListeners for navigation icons to display/hide areas ======
-
 navIconHome.addEventListener('click', navigateToHome)
 navIconBookmarks.addEventListener('click', navigateToBookmarks)
 navIconCreate.addEventListener('click', navigateToCreate)
