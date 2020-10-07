@@ -7,12 +7,30 @@
     <title>Quiz-App | Home</title>
   </head>
   <body>
-    <header class="header center">
+    <!-- ========================== Header ========================== -->
+    <!-- ------ Header Main ------ -->
+    <header data-js="header-home" class="header center">
       <h1 class="header__title">Quiz-App</h1>
       <script defer src="js/main.js"></script>
     </header>
+    <!-- ------ Header Bookmarks ------ -->
+    <header data-js="header-bookmarks" class="header center d-none">
+      <h1 class="header__title">Bookmarks</h1>
+    </header>
 
-    <main class="main-grid--1column">
+    <!-- ------ Header Create ------ -->
+    <header data-js="header-create" class="header center d-none">
+      <h1 class="header__title">Create</h1>
+    </header>
+
+    <!-- ------ Header Profile ------ -->
+    <header data-js="header-profile" class="header center d-none">
+      <h1 class="header__title">Profile</h1>
+    </header>
+
+    <!-- ========================== Main  ========================== -->
+    <!-- ------ Main Home ------ -->
+    <main data-js="main-home" class="main-grid--1column">
       <section class="card">
         <h2 class="card__title">Question:</h2>
         <svg
@@ -122,24 +140,12 @@
         </ul>
       </section>
     </main>
-
-    <footer class="navigation">
-      <a class="navigation__link center" href="index.html">
+    <!-- ------ Main Bookmarks ------ -->
+    <main data-js="main-bookmarks" class="main-grid--1column d-none">
+      <section class="card">
+        <h2 class="card__title">Question:</h2>
         <svg
-          class="navigation__icon navigation__icon--active"
-          alt="home"
-          ;
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-        </svg>
-      </a>
-
-      <a class="navigation__link center" href="bookmarks.html">
-        <svg
-          class="navigation__icon"
-          alt="bookmarks"
+          class="card__bookmark-icon card__bookmark-icon--active"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -147,31 +153,167 @@
             d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"
           />
         </svg>
-      </a>
-      <a class="navigation__link center" href="create.html">
+        <p class="card__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Exercitationem non, architecto commodi quod id asper?
+        </p>
+        <button class="button">Show Answer</button>
+        <p class="card__text d-none">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Exercitationem non, architecto commodi quod id asper?
+        </p>
+        <ul class="tag-list">
+          <li class="tag-list__item">CSS</li>
+          <li class="tag-list__item">HTML</li>
+          <li class="tag-list__item">Position</li>
+          <li class="tag-list__item">BEM</li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2 class="card__title">Question:</h2>
         <svg
-          class="navigation__icon"
-          alt="create"
+          class="card__bookmark-icon card__bookmark-icon--active"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
           <path
-            d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+            d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"
           />
         </svg>
-      </a>
-      <a class="navigation__link center" href="profile.html">
-        <svg
-          class="navigation__icon"
-          alt="profile"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
+        <p class="card__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Exercitationem non, architecto commodi quod id asper?
+        </p>
+        <button class="button">Show Answer</button>
+        <p class="card__text d-none">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Exercitationem non, architecto commodi quod id asper?
+        </p>
+        <ul class="tag-list">
+          <li class="tag-list__item">CSS</li>
+          <li class="tag-list__item">HTML</li>
+          <li class="tag-list__item">Position</li>
+          <li class="tag-list__item">BEM</li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- ------ Main Create ------ -->
+    <main data-js="main-create" class="main-grid--1column d-none">
+      <form class="form" action="">
+        <label for="textarea1"
+          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
+          placeat, reiciendis natus dolor!</label
         >
-          <path
-            d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
-          />
-        </svg>
-      </a>
+        <textarea
+          class="form__text-input"
+          name="textarea1"
+          id="textarea1"
+          cols="30"
+          rows="10"
+          required
+        ></textarea>
+
+        <label for="textarea2"
+          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
+          placeat, reiciendis natus dolor!</label
+        >
+        <textarea
+          class="form__text-input"
+          name="textarea2"
+          id="textarea2"
+          cols="30"
+          rows="10"
+          required
+        ></textarea>
+
+        <label for="tags-input"
+          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
+          placeat, reiciendis natus dolor!</label
+        >
+        <input
+          class="form__text-input"
+          type="text"
+          name="tags-input"
+          id="tags-input"
+          required
+        />
+
+        <input class="button" type="submit" value="Submit" />
+      </form>
+    </main>
+
+    <!-- ------ Main Profile ------ -->
+    <main data-js="main-profile" class="main-grid--2columns d-none">
+      <img
+        class="profile-picture"
+        src="images/profile-picture.png"
+        alt="Profile Picture"
+      />
+      <h3 class="center">Jana Bremer</h3>
+
+      <p class="grid-span">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
+        harum eaque autem. Vitae veniam quidem temporibus, quasi omnis, enim sit
+        perferendis eligendi deserunt cumque, accusamus placeat. Quidem iusto
+        possimus ad.
+      </p>
+
+      <h3 class="grid-span">Tags about myself</h3>
+      <ul class="tag-list grid-span">
+        <li class="tag-list__item">tag1</li>
+        <li class="tag-list__item">tag2</li>
+        <li class="tag-list__item">tag3</li>
+        <li class="tag-list__item">tag4</li>
+      </ul>
+      <button class="button grid-span">Logout</button>
+    </main>
+
+    <!-- ========================== Footer ========================== -->
+    <footer class="navigation">
+      <svg
+        data-js="nav-icon--home"
+        class="navigation__icon navigation__link center navigation__icon--active"
+        alt="home"
+        ;
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+      </svg>
+      <svg
+        data-js="nav-icon--bookmarks"
+        class="navigation__icon navigation__link center"
+        alt="bookmarks"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z" />
+      </svg>
+
+      <svg
+        data-js="nav-icon--create"
+        class="navigation__icon navigation__link center"
+        alt="create"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+        />
+      </svg>
+
+      <svg
+        data-js="nav-icon--profile"
+        class="navigation__icon navigation__link center"
+        alt="profile"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+        />
+      </svg>
     </footer>
   </body>
 </html>
