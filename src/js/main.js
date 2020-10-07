@@ -33,9 +33,12 @@ const iconBookmarks = document.querySelector('[data-js="icon-bookmarks"]')
 const iconCreate = document.querySelector('[data-js="icon-create"]')
 const iconProfile = document.querySelector('[data-js="icon-profile"]')
 
-navHome.addEventListener('click', displayHome)
+navHome.addEventListener('click', navigateToHome)
+navBookmarks.addEventListener('click', navigateToBookmarks)
+navCreate.addEventListener('click', navigateToCreate)
+navProfile.addEventListener('click', navigateToProfile)
 
-function displayHome() {
+function navigateToHome() {
   display(headerHome)
   displayNone(headerBookmarks)
   displayNone(headerCreate)
@@ -50,6 +53,57 @@ function displayHome() {
   deactivateIcon(iconBookmarks)
   deactivateIcon(iconCreate)
   deactivateIcon(iconProfile)
+}
+
+function navigateToBookmarks() {
+  displayNone(headerHome)
+  display(headerBookmarks)
+  displayNone(headerCreate)
+  displayNone(headerProfile)
+
+  displayNone(mainHome)
+  display(mainBookmarks)
+  displayNone(mainCreate)
+  displayNone(mainProfile)
+
+  dactivateIcon(iconHome)
+  activateIcon(iconBookmarks)
+  deactivateIcon(iconCreate)
+  deactivateIcon(iconProfile)
+}
+
+function navigateToCreate() {
+  displayNone(headerHome)
+  displayNone(headerBookmarks)
+  display(headerCreate)
+  displayNone(headerProfile)
+
+  displayNone(mainHome)
+  displayNone(mainBookmarks)
+  display(mainCreate)
+  displayNone(mainProfile)
+
+  dactivateIcon(iconHome)
+  deactivateIcon(iconBookmarks)
+  activateIcon(iconCreate)
+  deactivateIcon(iconProfile)
+}
+
+function navigateToProfile() {
+  displayNone(headerHome)
+  displayNone(headerBookmarks)
+  displayNone(headerCreate)
+  display(headerProfile)
+
+  displayNone(mainHome)
+  displayNone(mainBookmarks)
+  displayNone(mainCreate)
+  display(mainProfile)
+
+  dactivateIcon(iconHome)
+  deactivateIcon(iconBookmarks)
+  deactivateIcon(iconCreate)
+  activateIcon(iconProfile)
 }
 
 function displayNone(selector) {
