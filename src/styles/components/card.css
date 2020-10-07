@@ -9,7 +9,7 @@
 }
 
 .card__title {
-  font-size: 135%;
+  font-size: 125%;
 }
 
 .card__bookmark-icon {
@@ -25,16 +25,3 @@
 .card__bookmark-icon--active {
   fill: var(--primary);
 }
-
-.card__text {
-}
-
-/* 
-way to change svg-color??
-
-.card__bookmark-icon--frame {
-  fill: var(--primary);
-}
-.card__bookmark-icon--filling {
-  fill: var(--primary);
-} */
