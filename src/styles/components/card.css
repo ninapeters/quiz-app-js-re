@@ -16,7 +16,14 @@
   position: absolute;
   height: 60px;
   right: 5px;
-  top: -20px;
+  top: -18px;
+  stroke: var(--bookmark-icon);
+  stroke-width: 1.3px;
+  fill: var(--bookmark-icon--filling);
+}
+
+.card__bookmark-icon--active {
+  fill: var(--primary);
 }
 
 .card__text {
