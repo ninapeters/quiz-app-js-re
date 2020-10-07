@@ -1,27 +1,27 @@
 // ###### querySelectors ######
 
 // ------ Header ------
-
 const headerHome = document.querySelector('[data-js="header-home"]')
 const headerBookmarks = document.querySelector('[data-js="header-bookmarks"]')
 const headerCreate = document.querySelector('[data-js="header-create"]')
 const headerProfile = document.querySelector('[data-js="header-profile"]')
 
 // ------ Main ------
-
 const mainHome = document.querySelector('[data-js="main-home"]')
 const mainBookmarks = document.querySelector('[data-js="main-bookmarks"]')
 const mainCreate = document.querySelector('[data-js="main-create"]')
 const mainProfile = document.querySelector('[data-js="main-profile"]')
 
 // ------ Nav Icons ------
-
 const navIconHome = document.querySelector('[data-js="nav-icon--home"]')
 const navIconBookmarks = document.querySelector(
   '[data-js="nav-icon--bookmarks"]'
 )
 const navIconCreate = document.querySelector('[data-js="nav-icon--create"]')
 const navIconProfile = document.querySelector('[data-js="nav-icon--profile"]')
+
+// ------ Bookmark Icons ------
+const bookmarkIcon = document.querySelector('[data-js="bookmark-icon"]')
 
 // ###### CALL FUNCTIONS ######
 
@@ -31,6 +31,9 @@ navIconHome.addEventListener('click', navigateToHome)
 navIconBookmarks.addEventListener('click', navigateToBookmarks)
 navIconCreate.addEventListener('click', navigateToCreate)
 navIconProfile.addEventListener('click', navigateToProfile)
+
+// ====== addEventListeners for bookmark icons ======
+bookmarkIcon.addEventListener('click', toggleBookmarkIcon)
 
 // ###### FUNCTION DECLARATIONS ######
 
@@ -108,20 +111,23 @@ function navigateToProfile() {
   activateIcon(navIconProfile)
 }
 
-// ====== displayNone and display ======
-
-function displayNone(selector) {
-  selector.classList.add('d-none')
-}
-function display(selector) {
-  selector.classList.remove('d-none')
-}
-
 // ====== activate and deactivate navigation icon ======
-
 function activateIcon(selector) {
   selector.classList.add('navigation__icon--active')
 }
 function deactivateIcon(selector) {
   selector.classList.remove('navigation__icon--active')
+}
+
+// ====== toggle bookmark icons ======
+function toggleBookmarkIcon() {
+  bookmarkIcon.classList.toggle('card__bookmark-icon--active')
+}
+
+// ====== displayNone and display ======
+function displayNone(selector) {
+  selector.classList.add('d-none')
+}
+function display(selector) {
+  selector.classList.remove('d-none')
 }
