@@ -3,7 +3,7 @@
 .lightmode {
   --primary: #7ed174;
   --gradient: #1a581388;
-  --background-body: #f5fff4;
+  --background-main: #f5fff4;
   --background: #7dd17459;
   --bookmark-icon: #28941c;
   --bookmark-icon--filling: #c4eec0;
@@ -16,7 +16,7 @@
 .darkmode {
   --primary: #7ed174;
   --gradient: #1a581388;
-  --background-body: #0b3108;
+  --background-main: #0b3108;
   --background: #7dd17459;
   --bookmark-icon: #28941c;
   --bookmark-icon--filling: #c4eec0;
