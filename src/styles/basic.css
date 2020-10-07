@@ -18,10 +18,7 @@ body {
   transition: all 0.3s ease;
 }
 
-p {
-  margin: 0;
-}
-
+p,
 h1,
 h2,
 h3 {

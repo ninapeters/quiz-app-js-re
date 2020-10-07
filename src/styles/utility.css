@@ -8,6 +8,6 @@
   grid-column: 1/-1;
 }
 
-.hide {
+.d-none {
   display: none;
 }
