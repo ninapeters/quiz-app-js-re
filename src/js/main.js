@@ -23,17 +23,32 @@ const navIconProfile = document.querySelector('[data-js="nav-icon--profile"]')
 // ------ Bookmark Icons ------
 const bookmarkIcon = document.querySelector('[data-js="bookmark-icon"]')
 
+// ------ Answer Buttons ------
+const showAnswerButton = document.querySelector(
+  '[data-js="show-answer-button"]'
+)
+const hideAnswerButton = document.querySelector(
+  '[data-js="hide-answer-button"]'
+)
+
+// ------ Answer Text ------
+const answerText = document.querySelector('[data-js="answer-text"]')
+
 // ###### CALL FUNCTIONS ######
 
-// ====== addEventListeners for navigation ======
+// ====== addEventListeners for navigation icons to display/hide areas ======
 
 navIconHome.addEventListener('click', navigateToHome)
 navIconBookmarks.addEventListener('click', navigateToBookmarks)
 navIconCreate.addEventListener('click', navigateToCreate)
 navIconProfile.addEventListener('click', navigateToProfile)
 
-// ====== addEventListeners for bookmark icons ======
+// ====== addEventListener for bookmark icons to toggle (activate/deactive) status ======
 bookmarkIcon.addEventListener('click', toggleBookmarkIcon)
+
+// ====== addEventListener for show answer button and hide answer button to show/hide answer section ======
+showAnswerButton.addEventListener('click', showAnswerSection)
+hideAnswerButton.addEventListener('click', hideAnswerSection)
 
 // ###### FUNCTION DECLARATIONS ######
 
@@ -119,12 +134,29 @@ function deactivateIcon(selector) {
   selector.classList.remove('navigation__icon--active')
 }
 
-// ====== toggle bookmark icons ======
+// ====== toggle (=activate/deactivate) bookmark icons ======
 function toggleBookmarkIcon() {
   bookmarkIcon.classList.toggle('card__bookmark-icon--active')
 }
 
-// ====== displayNone and display ======
+// ====== show and hide answer section ======
+function showAnswerSection() {
+  display(answerText)
+  display(hideAnswerButton)
+  displayNone(showAnswerButton)
+}
+function hideAnswerSection() {
+  displayNone(answerText)
+  displayNone(hideAnswerButton)
+  display(showAnswerButton)
+}
+
+// ------ toggle (=show/hide) answer text ------
+function toggleAnswerText() {
+  answerText.classList.toggle('d-none')
+}
+
+// ====== displayNone, display and displayToggle ======
 function displayNone(selector) {
   selector.classList.add('d-none')
 }
