@@ -34,6 +34,12 @@ const hideAnswerButton = document.querySelector(
 // ------ Answer Text ------
 const answerText = document.querySelector('[data-js="answer-text"]')
 
+// ------ Create Form: Submit Button and Text Inputs ------
+const formSubmitButton = document.querySelector(
+  '[data-js="form-submit-button"]'
+)
+const form = document.querySelector('[data-js="form"]')
+
 // ###### CALL FUNCTIONS ######
 
 // ====== addEventListeners for navigation icons to display/hide areas ======
@@ -48,6 +54,9 @@ bookmarkIcon.addEventListener('click', toggleBookmarkIcon)
 // ====== addEventListener for show answer button and hide answer button to show/hide answer section ======
 showAnswerButton.addEventListener('click', showAnswerSection)
 hideAnswerButton.addEventListener('click', hideAnswerSection)
+
+// ====== addEventListener for form submit button and arrow function to reset form ======
+formSubmitButton.addEventListener('click', () => form.reset())
 
 // ###### FUNCTION DECLARATIONS ######
 
@@ -154,6 +163,11 @@ function hideAnswerSection() {
 function toggleAnswerText() {
   answerText.classList.toggle('d-none')
 }
+
+// // ------ reset form text input ------
+// function resetFormTextInput() {
+//   formTextInput.reset()
+// }
 
 // ====== displayNone, display and displayToggle ======
 function displayNone(selector) {
