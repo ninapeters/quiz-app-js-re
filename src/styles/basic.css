@@ -28,3 +28,37 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+.main-grid--1column {
+  overflow-y: scroll;
+  display: grid;
+  align-content: start;
+  gap: 20px;
+  padding: 30px 20px;
+}
+
+/* fix padding-bottom rendering on grid: */
+.main-grid--1column > *:last-child,
+.main-grid--2columns > *:last-child {
+  position: relative;
+}
+
+.main-grid--1column > *:last-child:after,
+.main-grid--2columns > *:last-child:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+
+.main-grid--2columns {
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-content: start;
+  gap: 20px;
+  padding: 30px 20px;
+}
