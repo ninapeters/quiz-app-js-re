@@ -65,7 +65,6 @@ darkmodeButton.addEventListener('click', switchToDarkmode)
 
 function getDataJS(name) {
   const selector = `[data-js="${name}"]`
-  console.log(selector)
   return document.querySelector(selector)
 }
 
