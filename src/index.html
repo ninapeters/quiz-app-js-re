@@ -9,28 +9,28 @@
   <body data-js="body" class="lightmode">
     <!-- ========================== Header ========================== -->
     <!-- ------ Header Main ------ -->
-    <header data-js="header-home" class="header center">
+    <header data-js="header" data-name="home" class="header center">
       <h1 class="header__title">Quiz-App</h1>
       <script defer src="js/main.js"></script>
     </header>
     <!-- ------ Header Bookmarks ------ -->
-    <header data-js="header-bookmarks" class="header center d-none">
+    <header data-js="header" data-name="bookmarks" class="header center d-none">
       <h1 class="header__title">Bookmarks</h1>
     </header>
 
     <!-- ------ Header Create ------ -->
-    <header data-js="header-create" class="header center d-none">
+    <header data-js="header" data-name="create" class="header center d-none">
       <h1 class="header__title">Create</h1>
     </header>
 
     <!-- ------ Header Profile ------ -->
-    <header data-js="header-profile" class="header center d-none">
+    <header data-js="header" data-name="profile" class="header center d-none">
       <h1 class="header__title">Profile</h1>
     </header>
 
     <!-- ========================== Main  ========================== -->
     <!-- ------ Main Home ------ -->
-    <main data-js="main-home" class="main-grid--1column">
+    <main data-js="pages" data-name="home" class="main-grid--1column">
       <section class="card">
         <h2 class="card__title">Question:</h2>
         <svg
@@ -148,7 +148,11 @@
       </section>
     </main>
     <!-- ------ Main Bookmarks ------ -->
-    <main data-js="main-bookmarks" class="main-grid--1column d-none">
+    <main
+      data-js="pages"
+      data-name="bookmarks"
+      class="main-grid--1column d-none"
+    >
       <section class="card">
         <h2 class="card__title">Question:</h2>
         <svg
@@ -206,7 +210,7 @@
     </main>
 
     <!-- ------ Main Create ------ -->
-    <main data-js="main-create" class="main-grid--1column d-none">
+    <main data-js="pages" data-name="create" class="main-grid--1column d-none">
       <form data-js="form" class="form" action="">
         <label for="textarea1"
           >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
@@ -256,7 +260,11 @@
     </main>
 
     <!-- ------ Main Profile ------ -->
-    <main data-js="main-profile" class="main-grid--2columns d-none">
+    <main
+      data-js="pages"
+      data-name="profile"
+      class="main-grid--2columns d-none"
+    >
       <img
         class="profile-picture"
         src="images/profile-picture.png"
@@ -290,7 +298,8 @@
     <!-- ========================== Footer ========================== -->
     <footer class="navigation">
       <svg
-        data-js="nav-icon--home"
+        data-js="nav-icons"
+        data-name="home"
         class="navigation__icon navigation__link center navigation__icon--active"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -298,7 +307,8 @@
         <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
       </svg>
       <svg
-        data-js="nav-icon--bookmarks"
+        data-js="nav-icons"
+        data-name="bookmarks"
         class="navigation__icon navigation__link center"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -307,7 +317,8 @@
       </svg>
 
       <svg
-        data-js="nav-icon--create"
+        data-js="nav-icons"
+        data-name="create"
         class="navigation__icon navigation__link center"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -318,7 +329,8 @@
       </svg>
 
       <svg
-        data-js="nav-icon--profile"
+        data-js="nav-icons"
+        data-name="profile"
         class="navigation__icon navigation__link center"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

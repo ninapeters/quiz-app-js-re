@@ -1,8 +1,7 @@
-import { getDataJsAll, getDataJS, displayNone, display } from './lib'
+import { getDataJsAll, displayNone, display } from './lib'
 export default function setupCard() {
   // ------ Select Bookmark Icons ------
-
-  const bookmarkIcons = document.querySelectorAll('[data-js=bookmark-icon]')
+  const bookmarkIcons = getDataJsAll('bookmark-icon')
 
   bookmarkIcons.forEach(toggleBookmarkIcon)
 
@@ -14,7 +13,7 @@ export default function setupCard() {
     bookmarkIcons.forEach((bookmarkIcon) => {
       bookmarkIcon.classList.toggle(
         'card__bookmark-icon--active',
-        bookmarkIcon === event.target
+        bookmarkIcon === event.currentTarget
       )
     })
   }

@@ -1,91 +1,36 @@
-import { getDataJS, displayNone, display } from './lib'
+import { getDataJsAll, displayNone, display } from './lib'
 
 export default function setupNavigation() {
-  /*   const header = document.querySelectorAll()
-  const pages = document.querySelectorAll()
-  const navIcons = document.querySelectorAll() */
+  const header = getDataJsAll('header')
+  const pages = getDataJsAll('pages')
+  const navIcons = getDataJsAll('nav-icons')
 
-  // ------ Select Header ------
-  const headerHome = getDataJS('header-home')
-  const headerBookmarks = getDataJS('header-bookmarks')
-  const headerCreate = getDataJS('header-create')
-  const headerProfile = getDataJS('header-profile')
+  navIcons.forEach(navigateToPage)
 
-  // ------ Select Main ------
-  const mainHome = getDataJS('main-home')
-  const mainBookmarks = getDataJS('main-bookmarks')
-  const mainCreate = getDataJS('main-create')
-  const mainProfile = getDataJS('main-profile')
-
-  // ------ Select Nav Icons ------
-  const navIconHome = getDataJS('nav-icon--home')
-  const navIconBookmarks = getDataJS('nav-icon--bookmarks')
-  const navIconCreate = getDataJS('nav-icon--create')
-  const navIconProfile = getDataJS('nav-icon--profile')
-
-  // ====== navigation icons to display/hide pages ======
-  navIconHome.addEventListener('click', navigateToHome)
-  navIconBookmarks.addEventListener('click', navigateToBookmarks)
-  navIconCreate.addEventListener('click', navigateToCreate)
-  navIconProfile.addEventListener('click', navigateToProfile)
-
-  // ====== function declarations for navigation ======
-
-  // ------ navigate to home page ------
-  function navigateToHome() {
-    hideAllPages()
-    showPage(headerHome, mainHome, navIconHome)
+  function navigateToPage(navLink) {
+    navLink.addEventListener('click', switchPages)
   }
 
-  // ------ navigate to bookmarks page ------
-  function navigateToBookmarks() {
-    hideAllPages()
-    showPage(headerBookmarks, mainBookmarks, navIconBookmarks)
-  }
+  function switchPages(event) {
+    const clickedIcon = event.currentTarget
+    const targetPageName = clickedIcon.dataset.name
+    const targetHeaderName = clickedIcon.dataset.name
 
-  // ------ navigate to create page ------
-  function navigateToCreate() {
-    hideAllPages()
-    showPage(headerCreate, mainCreate, navIconCreate)
-  }
+    header.forEach((header) => {
+      const headerName = header.dataset.name
+      header.classList.toggle('d-none', headerName !== targetHeaderName)
+    })
 
-  // ------ navigate to profile page ------
-  function navigateToProfile() {
-    hideAllPages()
-    showPage(headerProfile, mainProfile, navIconProfile)
-  }
+    pages.forEach((page) => {
+      const pageName = page.dataset.name
+      page.classList.toggle('d-none', pageName !== targetPageName)
+    })
 
-  // ====== function hide all pages ======
-  function hideAllPages() {
-    displayNone(headerHome)
-    displayNone(headerBookmarks)
-    displayNone(headerCreate)
-    displayNone(headerProfile)
-
-    displayNone(mainHome)
-    displayNone(mainBookmarks)
-    displayNone(mainCreate)
-    displayNone(mainProfile)
-
-    deactivateIcon(navIconHome)
-    deactivateIcon(navIconBookmarks)
-    deactivateIcon(navIconCreate)
-    deactivateIcon(navIconProfile)
-  }
-
-  // ====== function to show all parts of a page ======
-
-  function showPage(headerPageName, mainPageName, navIconPageName) {
-    display(headerPageName)
-    display(mainPageName)
-    activateIcon(navIconPageName)
-  }
-
-  // ====== activate and deactivate navigation icon ======
-  function activateIcon(selector) {
-    selector.classList.add('navigation__icon--active')
-  }
-  function deactivateIcon(selector) {
-    selector.classList.remove('navigation__icon--active')
+    navIcons.forEach((navIcon) => {
+      navIcon.classList.toggle(
+        'navigation__icon--active',
+        navIcon === clickedIcon
+      )
+    })
   }
 }
