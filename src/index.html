@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <title>Quiz-App | Home</title>
   </head>
-  <body>
+  <body data-js="body" class="lightmode">
     <!-- ========================== Header ========================== -->
     <!-- ------ Header Main ------ -->
     <header data-js="header-home" class="header center">
@@ -275,6 +275,12 @@
         <li class="tag-list__item">tag3</li>
         <li class="tag-list__item">tag4</li>
       </ul>
+      <button data-js="darkmode-button" class="button grid-span">
+        darkmode
+      </button>
+      <button data-js="lightmode-button" class="button grid-span d-none">
+        lightmode
+      </button>
       <button class="button grid-span">Logout</button>
     </main>
 

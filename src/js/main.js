@@ -1,18 +1,21 @@
 // ###### querySelectors ######
 
-// ------ Header ------
+// ------ Select Body ------
+const body = document.querySelector('[data-js="body"]')
+
+// ------ Select Header ------
 const headerHome = document.querySelector('[data-js="header-home"]')
 const headerBookmarks = document.querySelector('[data-js="header-bookmarks"]')
 const headerCreate = document.querySelector('[data-js="header-create"]')
 const headerProfile = document.querySelector('[data-js="header-profile"]')
 
-// ------ Main ------
+// ------ Select Main ------
 const mainHome = document.querySelector('[data-js="main-home"]')
 const mainBookmarks = document.querySelector('[data-js="main-bookmarks"]')
 const mainCreate = document.querySelector('[data-js="main-create"]')
 const mainProfile = document.querySelector('[data-js="main-profile"]')
 
-// ------ Nav Icons ------
+// ------ Select Nav Icons ------
 const navIconHome = document.querySelector('[data-js="nav-icon--home"]')
 const navIconBookmarks = document.querySelector(
   '[data-js="nav-icon--bookmarks"]'
@@ -20,43 +23,49 @@ const navIconBookmarks = document.querySelector(
 const navIconCreate = document.querySelector('[data-js="nav-icon--create"]')
 const navIconProfile = document.querySelector('[data-js="nav-icon--profile"]')
 
-// ------ Bookmark Icons ------
+// ------ Select Bookmark Icons ------
 const bookmarkIcon = document.querySelector('[data-js="bookmark-icon"]')
 
-// ------ Answer Buttons ------
+// ------ Select Answer Buttons and Answer Text------
 const showAnswerButton = document.querySelector(
   '[data-js="show-answer-button"]'
 )
 const hideAnswerButton = document.querySelector(
   '[data-js="hide-answer-button"]'
 )
-
-// ------ Answer Text ------
 const answerText = document.querySelector('[data-js="answer-text"]')
 
-// ------ Create Form: Submit Button and Text Inputs ------
+// ------ Select Form Submit Button and Text Inputs ------
 const formSubmitButton = document.querySelector(
   '[data-js="form-submit-button"]'
 )
 const form = document.querySelector('[data-js="form"]')
 
-// ###### CALL FUNCTIONS ######
+// ------ Select Dark and Light Mode Buttons ------
+const lightmodeButton = document.querySelector('[data-js="lightmode-button"]')
+const darkmodeButton = document.querySelector('[data-js="darkmode-button"]')
 
-// ====== addEventListeners for navigation icons to display/hide areas ======
+// ###### CALL FUNCTIONS WITH ADDEVENTLISTENER ######
+
+// ====== navigation icons to display/hide pages ======
 navIconHome.addEventListener('click', navigateToHome)
 navIconBookmarks.addEventListener('click', navigateToBookmarks)
 navIconCreate.addEventListener('click', navigateToCreate)
 navIconProfile.addEventListener('click', navigateToProfile)
 
-// ====== addEventListener for bookmark icons to toggle (activate/deactive) status ======
+// ====== bookmark icons to toggle (activate/deactive) status ======
 bookmarkIcon.addEventListener('click', toggleBookmarkIcon)
 
-// ====== addEventListener for show answer button and hide answer button to show/hide answer section ======
+// ====== show and hide answer buttons to show/hide answer section ======
 showAnswerButton.addEventListener('click', showAnswerSection)
 hideAnswerButton.addEventListener('click', hideAnswerSection)
 
-// ====== addEventListener for form submit button and arrow function to reset form ======
+// ====== form submit button with arrow function to reset form ======
 formSubmitButton.addEventListener('click', () => form.reset())
+
+// ====== dark and lightmode buttons to switch between modes ======
+lightmodeButton.addEventListener('click', switchToLightmode)
+darkmodeButton.addEventListener('click', switchToDarkmode)
 
 // ###### FUNCTION DECLARATIONS ######
 
@@ -64,74 +73,52 @@ formSubmitButton.addEventListener('click', () => form.reset())
 
 // ------ navigate to home page ------
 function navigateToHome() {
-  display(headerHome)
-  displayNone(headerBookmarks)
-  displayNone(headerCreate)
-  displayNone(headerProfile)
-
-  display(mainHome)
-  displayNone(mainBookmarks)
-  displayNone(mainCreate)
-  displayNone(mainProfile)
-
-  activateIcon(navIconHome)
-  deactivateIcon(navIconBookmarks)
-  deactivateIcon(navIconCreate)
-  deactivateIcon(navIconProfile)
+  hideAllPages()
+  showPage(headerHome, mainHome, navIconHome)
 }
 
 // ------ navigate to bookmarks page ------
 function navigateToBookmarks() {
-  displayNone(headerHome)
-  display(headerBookmarks)
-  displayNone(headerCreate)
-  displayNone(headerProfile)
-
-  displayNone(mainHome)
-  display(mainBookmarks)
-  displayNone(mainCreate)
-  displayNone(mainProfile)
-
-  deactivateIcon(navIconHome)
-  activateIcon(navIconBookmarks)
-  deactivateIcon(navIconCreate)
-  deactivateIcon(navIconProfile)
+  hideAllPages()
+  showPage(headerBookmarks, mainBookmarks, navIconBookmarks)
 }
 
 // ------ navigate to create page ------
 function navigateToCreate() {
-  displayNone(headerHome)
-  displayNone(headerBookmarks)
-  display(headerCreate)
-  displayNone(headerProfile)
-
-  displayNone(mainHome)
-  displayNone(mainBookmarks)
-  display(mainCreate)
-  displayNone(mainProfile)
-
-  deactivateIcon(navIconHome)
-  deactivateIcon(navIconBookmarks)
-  activateIcon(navIconCreate)
-  deactivateIcon(navIconProfile)
+  hideAllPages()
+  showPage(headerCreate, mainCreate, navIconCreate)
 }
 
 // ------ navigate to profile page ------
 function navigateToProfile() {
+  hideAllPages()
+  showPage(headerProfile, mainProfile, navIconProfile)
+}
+
+// ====== function hide all pages ======
+function hideAllPages() {
   displayNone(headerHome)
   displayNone(headerBookmarks)
   displayNone(headerCreate)
-  display(headerProfile)
+  displayNone(headerProfile)
 
   displayNone(mainHome)
   displayNone(mainBookmarks)
   displayNone(mainCreate)
-  display(mainProfile)
+  displayNone(mainProfile)
 
   deactivateIcon(navIconHome)
   deactivateIcon(navIconBookmarks)
   deactivateIcon(navIconCreate)
-  activateIcon(navIconProfile)
+  deactivateIcon(navIconProfile)
+}
+
+// ====== function to show all parts of a page ======
+
+function showPage(headerPageName, mainPageName, navIconPageName) {
+  display(headerPageName)
+  display(mainPageName)
+  activateIcon(navIconPageName)
 }
 
 // ====== activate and deactivate navigation icon ======
@@ -159,17 +146,23 @@ function hideAnswerSection() {
   display(showAnswerButton)
 }
 
-// ------ toggle (=show/hide) answer text ------
-function toggleAnswerText() {
-  answerText.classList.toggle('d-none')
+// ====== switch color theme to lightmode/darkmode ======
+
+function switchToDarkmode() {
+  displayNone(darkmodeButton)
+  display(lightmodeButton)
+  body.classList.add('darkmode')
+  body.classList.remove('lightmode')
 }
 
-// // ------ reset form text input ------
-// function resetFormTextInput() {
-//   formTextInput.reset()
-// }
+function switchToLightmode() {
+  display(darkmodeButton)
+  displayNone(lightmodeButton)
+  body.classList.remove('darkmode')
+  body.classList.add('lightmode')
+}
 
-// ====== displayNone, display and displayToggle ======
+// ====== displayNone and display ======
 function displayNone(selector) {
   selector.classList.add('d-none')
 }
