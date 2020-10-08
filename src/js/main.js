@@ -1,5 +1,3 @@
-// ###### querySelectors ######
-
 // ------ Select Body ------
 const body = getDataJS('body')
 
@@ -17,7 +15,7 @@ const mainProfile = getDataJS('main-profile')
 
 // ------ Select Nav Icons ------
 const navIconHome = getDataJS('nav-icon--home')
-const navIconBookmarks = getDataJS((s = 'nav-icon--bookmarks'))
+const navIconBookmarks = getDataJS('nav-icon--bookmarks')
 const navIconCreate = getDataJS('nav-icon--create')
 const navIconProfile = getDataJS('nav-icon--profile')
 
