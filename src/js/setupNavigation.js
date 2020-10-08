@@ -1,5 +1,10 @@
 import { getDataJS, displayNone, display } from './lib'
+
 export default function setupNavigation() {
+  /*   const header = document.querySelectorAll()
+  const pages = document.querySelectorAll()
+  const navIcons = document.querySelectorAll() */
+
   // ------ Select Header ------
   const headerHome = getDataJS('header-home')
   const headerBookmarks = getDataJS('header-bookmarks')

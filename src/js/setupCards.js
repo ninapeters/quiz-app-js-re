@@ -1,26 +1,32 @@
-import { getDataJS, displayNone, display } from './lib'
+import { getDataJsAll, getDataJS, displayNone, display } from './lib'
 export default function setupCard() {
   // ------ Select Bookmark Icons ------
-  const bookmarkIcon = getDataJS('bookmark-icon')
 
-  // ====== bookmark icons to toggle (activate/deactive) status ======
-  bookmarkIcon.addEventListener('click', toggleBookmarkIcon)
+  const bookmarkIcons = document.querySelectorAll('[data-js=bookmark-icon]')
 
-  // ====== toggle (=activate/deactivate) bookmark icons ======
-  function toggleBookmarkIcon() {
-    bookmarkIcon.classList.toggle('card__bookmark-icon--active')
+  bookmarkIcons.forEach(toggleBookmarkIcon)
+
+  function toggleBookmarkIcon(bookmarkIcons) {
+    bookmarkIcons.addEventListener('click', activateBookmarkIcon)
+  }
+
+  function activateBookmarkIcon(event) {
+    bookmarkIcons.forEach((bookmarkIcon) => {
+      bookmarkIcon.classList.toggle(
+        'card__bookmark-icon--active',
+        bookmarkIcon === event.target
+      )
+    })
   }
 
   // ------ Select Answer Buttons and Answer Text------
-  const showAnswerButton = getDataJS('show-answer-button')
+  /*  const showAnswerButton = getDataJS('show-answer-button')
   const hideAnswerButton = getDataJS('hide-answer-button')
   const answerText = getDataJS('answer-text')
 
-  // ====== show and hide answer buttons to show/hide answer section ======
   showAnswerButton.addEventListener('click', showAnswerSection)
   hideAnswerButton.addEventListener('click', hideAnswerSection)
 
-  // ====== show and hide answer section ======
   function showAnswerSection() {
     display(answerText)
     display(hideAnswerButton)
@@ -30,5 +36,5 @@ export default function setupCard() {
     displayNone(answerText)
     displayNone(hideAnswerButton)
     display(showAnswerButton)
-  }
+  } */
 }
