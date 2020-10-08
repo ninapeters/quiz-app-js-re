@@ -1,49 +1,41 @@
 // ###### querySelectors ######
 
 // ------ Select Body ------
-const body = document.querySelector('[data-js="body"]')
+const body = getDataJS('body')
 
 // ------ Select Header ------
-const headerHome = document.querySelector('[data-js="header-home"]')
-const headerBookmarks = document.querySelector('[data-js="header-bookmarks"]')
-const headerCreate = document.querySelector('[data-js="header-create"]')
-const headerProfile = document.querySelector('[data-js="header-profile"]')
+const headerHome = getDataJS('header-home')
+const headerBookmarks = getDataJS('header-bookmarks')
+const headerCreate = getDataJS('header-create')
+const headerProfile = getDataJS('header-profile')
 
 // ------ Select Main ------
-const mainHome = document.querySelector('[data-js="main-home"]')
-const mainBookmarks = document.querySelector('[data-js="main-bookmarks"]')
-const mainCreate = document.querySelector('[data-js="main-create"]')
-const mainProfile = document.querySelector('[data-js="main-profile"]')
+const mainHome = getDataJS('main-home')
+const mainBookmarks = getDataJS('main-bookmarks')
+const mainCreate = getDataJS('main-create')
+const mainProfile = getDataJS('main-profile')
 
 // ------ Select Nav Icons ------
-const navIconHome = document.querySelector('[data-js="nav-icon--home"]')
-const navIconBookmarks = document.querySelector(
-  '[data-js="nav-icon--bookmarks"]'
-)
-const navIconCreate = document.querySelector('[data-js="nav-icon--create"]')
-const navIconProfile = document.querySelector('[data-js="nav-icon--profile"]')
+const navIconHome = getDataJS('nav-icon--home')
+const navIconBookmarks = getDataJS((s = 'nav-icon--bookmarks'))
+const navIconCreate = getDataJS('nav-icon--create')
+const navIconProfile = getDataJS('nav-icon--profile')
 
 // ------ Select Bookmark Icons ------
-const bookmarkIcon = document.querySelector('[data-js="bookmark-icon"]')
+const bookmarkIcon = getDataJS('bookmark-icon')
 
 // ------ Select Answer Buttons and Answer Text------
-const showAnswerButton = document.querySelector(
-  '[data-js="show-answer-button"]'
-)
-const hideAnswerButton = document.querySelector(
-  '[data-js="hide-answer-button"]'
-)
-const answerText = document.querySelector('[data-js="answer-text"]')
+const showAnswerButton = getDataJS((s = 'show-answer-button'))
+const hideAnswerButton = getDataJS((s = 'hide-answer-button'))
+const answerText = getDataJS('answer-text')
 
 // ------ Select Form Submit Button and Text Inputs ------
-const formSubmitButton = document.querySelector(
-  '[data-js="form-submit-button"]'
-)
-const form = document.querySelector('[data-js="form"]')
+const formSubmitButton = getDataJS((s = 'form-submit-button'))
+const form = getDataJS('form')
 
 // ------ Select Dark and Light Mode Buttons ------
-const lightmodeButton = document.querySelector('[data-js="lightmode-button"]')
-const darkmodeButton = document.querySelector('[data-js="darkmode-button"]')
+const lightmodeButton = getDataJS('lightmode-button')
+const darkmodeButton = getDataJS('darkmode-button')
 
 // ###### CALL FUNCTIONS WITH ADDEVENTLISTENER ######
 
@@ -68,6 +60,14 @@ lightmodeButton.addEventListener('click', switchToLightmode)
 darkmodeButton.addEventListener('click', switchToDarkmode)
 
 // ###### FUNCTION DECLARATIONS ######
+
+// ====== function getDataJS ======
+
+function getDataJS(name) {
+  const selector = `[data-js="${name}"]`
+  console.log(selector)
+  return document.querySelector(selector)
+}
 
 // ====== function declarations for navigation ======
 
