@@ -1,31 +1,34 @@
-// ------ Select Bookmark Icons ------
-const bookmarkIcon = getDataJS('bookmark-icon')
+import { getDataJS, displayNone, display } from './lib'
+export default function setupCard() {
+  // ------ Select Bookmark Icons ------
+  const bookmarkIcon = getDataJS('bookmark-icon')
 
-// ------ Select Answer Buttons and Answer Text------
-const showAnswerButton = getDataJS((s = 'show-answer-button'))
-const hideAnswerButton = getDataJS((s = 'hide-answer-button'))
-const answerText = getDataJS('answer-text')
+  // ====== bookmark icons to toggle (activate/deactive) status ======
+  bookmarkIcon.addEventListener('click', toggleBookmarkIcon)
 
-// ====== bookmark icons to toggle (activate/deactive) status ======
-bookmarkIcon.addEventListener('click', toggleBookmarkIcon)
+  // ====== toggle (=activate/deactivate) bookmark icons ======
+  function toggleBookmarkIcon() {
+    bookmarkIcon.classList.toggle('card__bookmark-icon--active')
+  }
 
-// ====== show and hide answer buttons to show/hide answer section ======
-showAnswerButton.addEventListener('click', showAnswerSection)
-hideAnswerButton.addEventListener('click', hideAnswerSection)
+  // ------ Select Answer Buttons and Answer Text------
+  const showAnswerButton = getDataJS('show-answer-button')
+  const hideAnswerButton = getDataJS('hide-answer-button')
+  const answerText = getDataJS('answer-text')
 
-// ====== toggle (=activate/deactivate) bookmark icons ======
-function toggleBookmarkIcon() {
-  bookmarkIcon.classList.toggle('card__bookmark-icon--active')
-}
+  // ====== show and hide answer buttons to show/hide answer section ======
+  showAnswerButton.addEventListener('click', showAnswerSection)
+  hideAnswerButton.addEventListener('click', hideAnswerSection)
 
-// ====== show and hide answer section ======
-function showAnswerSection() {
-  display(answerText)
-  display(hideAnswerButton)
-  displayNone(showAnswerButton)
-}
-function hideAnswerSection() {
-  displayNone(answerText)
-  displayNone(hideAnswerButton)
-  display(showAnswerButton)
+  // ====== show and hide answer section ======
+  function showAnswerSection() {
+    display(answerText)
+    display(hideAnswerButton)
+    displayNone(showAnswerButton)
+  }
+  function hideAnswerSection() {
+    displayNone(answerText)
+    displayNone(hideAnswerButton)
+    display(showAnswerButton)
+  }
 }

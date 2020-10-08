@@ -1,14 +1,12 @@
-// ====== function getDataJS ======
-
-function getDataJS(name) {
+export function getDataJS(name) {
   const selector = `[data-js="${name}"]`
   return document.querySelector(selector)
 }
 
-// ====== displayNone and display ======
-function displayNone(selector) {
+export function displayNone(selector) {
   selector.classList.add('d-none')
 }
-function display(selector) {
+
+export function display(selector) {
   selector.classList.remove('d-none')
 }
