@@ -1,4 +1,4 @@
-export function getDataJS(name) {
+export function getDataJs(name) {
   const selector = `[data-js="${name}"]`
   return document.querySelector(selector)
 }

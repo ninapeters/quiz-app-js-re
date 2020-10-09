@@ -1,4 +1,4 @@
-import { getDataJsAll, displayNone, display } from './lib'
+import { getDataJsAll } from './lib'
 
 export default function setupNavigation() {
   const header = getDataJsAll('header')

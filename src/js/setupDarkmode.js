@@ -1,16 +1,13 @@
-import { getDataJS, displayNone, display } from './lib'
+import { getDataJs, displayNone, display } from './lib'
 export default function setupDarkmode() {
-  const body = getDataJS('body')
+  const body = getDataJs('body')
 
-  // ------ Select Dark and Light Mode Buttons ------
-  const lightmodeButton = getDataJS('lightmode-button')
-  const darkmodeButton = getDataJS('darkmode-button')
+  const lightmodeButton = getDataJs('lightmode-button')
+  const darkmodeButton = getDataJs('darkmode-button')
 
-  // ====== dark and lightmode buttons to switch between modes ======
   lightmodeButton.addEventListener('click', switchToLightmode)
   darkmodeButton.addEventListener('click', switchToDarkmode)
 
-  // ====== switch color theme to lightmode/darkmode ======
   function switchToDarkmode() {
     displayNone(darkmodeButton)
     display(lightmodeButton)
