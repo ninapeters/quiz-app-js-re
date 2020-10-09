@@ -1,4 +1,4 @@
-import { getDataJsAll, displayNone, display } from './lib'
+import { getDataJsAll, getDataJs, displayNone, display } from './lib'
 export default function setupCard() {
   // ------ Select Bookmark Icons ------
   const bookmarkIcons = getDataJsAll('bookmark-icon')
@@ -18,9 +18,11 @@ export default function setupCard() {
     })
   }
 
-  /*   const showAnswerButton = getDataJS('show-answer-button')
-  const hideAnswerButton = getDataJS('hide-answer-button')
-  const answerText = getDataJS('answer-text')
+  // NOCH DER ALTE CODE!
+
+  const showAnswerButton = getDataJs('show-answer-button')
+  const hideAnswerButton = getDataJs('hide-answer-button')
+  const answerText = getDataJs('answer-text')
 
   showAnswerButton.addEventListener('click', showAnswerSection)
   hideAnswerButton.addEventListener('click', hideAnswerSection)
@@ -34,5 +36,5 @@ export default function setupCard() {
     displayNone(answerText)
     displayNone(hideAnswerButton)
     display(showAnswerButton)
-  } */
+  }
 }
