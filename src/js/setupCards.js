@@ -1,40 +1,38 @@
-import { getDataJsAll, getDataJs, displayNone, display } from './lib'
-export default function setupCard() {
-  // ------ Select Bookmark Icons ------
-  const bookmarkIcons = getDataJsAll('bookmark-icon')
+import { display, displayNone, getAllDataJs } from './lib'
 
-  bookmarkIcons.forEach(toggleBookmarkIcon)
+export default function setupCards() {
+  const cards = getAllDataJs('card')
+  cards.forEach(addCardLogic)
+}
 
-  function toggleBookmarkIcon(bookmarkIcons) {
-    bookmarkIcons.addEventListener('click', activateBookmarkIcon)
-  }
+function addCardLogic(card) {
+  addBookmarkLogic(card)
+  addAnswerLogic(card)
+}
 
-  function activateBookmarkIcon(event) {
-    bookmarkIcons.forEach((bookmarkIcon) => {
-      bookmarkIcon.classList.toggle(
-        'card__bookmark-icon--active',
-        bookmarkIcon === event.currentTarget
-      )
-    })
-  }
+function addBookmarkLogic(card) {
+  const bookmarkIcon = card.querySelector('svg')
+  bookmarkIcon.addEventListener('click', toggleBookmark)
+}
 
-  // NOCH DER ALTE CODE!
+function toggleBookmark(event) {
+  event.target.classList.toggle('card__bookmark-icon--active')
+}
 
-  const showAnswerButton = getDataJs('show-answer-button')
-  const hideAnswerButton = getDataJs('hide-answer-button')
-  const answerText = getDataJs('answer-text')
+function addAnswerLogic(card) {
+  const answerText = card.querySelector('[data-js="answer-text"')
+  const hideAnswerButton = card.querySelector('[data-js=hide-answer-button]')
+  const showAnswerButton = card.querySelector('[data-js=show-answer-button]')
 
-  showAnswerButton.addEventListener('click', showAnswerSection)
-  hideAnswerButton.addEventListener('click', hideAnswerSection)
-
-  function showAnswerSection() {
+  showAnswerButton.addEventListener('click', () => {
     display(answerText)
     display(hideAnswerButton)
     displayNone(showAnswerButton)
-  }
-  function hideAnswerSection() {
+  })
+
+  hideAnswerButton.addEventListener('click', () => {
     displayNone(answerText)
     displayNone(hideAnswerButton)
     display(showAnswerButton)
-  }
+  })
 }
