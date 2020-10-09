@@ -1,15 +1,13 @@
 export function getDataJs(name) {
-  const selector = `[data-js="${name}"]`
-  return document.querySelector(selector)
+  return document.querySelector(`[data-js="${name}"]`)
 }
 
-export function getDataJsAll(name) {
-  const selector = `[data-js="${name}"]`
-  return document.querySelectorAll(selector)
+export function getAllDataJs(name) {
+  return document.querySelectorAll(`[data-js="${name}"]`)
 }
 
-export function displayNone(selector) {
-  selector.classList.add('d-none')
+export function displayNone(element) {
+  element.classList.add('d-none')
 }
 
 export function display(selector) {

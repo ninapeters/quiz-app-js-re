@@ -1,35 +1,44 @@
-import { getDataJsAll } from './lib'
+import { getAllDataJs, display, displayNone } from './lib'
 
 export default function setupNavigation() {
-  const header = getDataJsAll('header')
-  const pages = getDataJsAll('pages')
-  const navIcons = getDataJsAll('nav-icons')
+  const headers = getAllDataJs('header')
+  const pages = getAllDataJs('page')
+  const navItems = getAllDataJs('nav')
 
-  navIcons.forEach(navigateToPage)
+  navItems.forEach(addClickLogic)
 
-  function navigateToPage(navLink) {
-    navLink.addEventListener('click', switchPages)
+  function addClickLogic(navItem) {
+    navItem.addEventListener('click', handleClick)
   }
 
-  function switchPages(event) {
-    const clickedIcon = event.currentTarget
-    const targetPageName = clickedIcon.dataset.name
-    const targetHeaderName = clickedIcon.dataset.name
+  function handleClick(event) {
+    const navItem = event.currentTarget
+    const targetName = navItem.dataset.name // 'home' or 'bookmarks' etc.
+    updateHeaders(targetName)
+    updatePages(targetName)
+    updateNavigation(targetName)
+  }
 
-    header.forEach((header) => {
-      const headerName = header.dataset.name
-      header.classList.toggle('d-none', headerName !== targetHeaderName)
-    })
-
+  function updatePages(targetName) {
     pages.forEach((page) => {
       const pageName = page.dataset.name
-      page.classList.toggle('d-none', pageName !== targetPageName)
+      page.classList.toggle('d-none', pageName !== targetName)
     })
+  }
 
-    navIcons.forEach((navIcon) => {
-      navIcon.classList.toggle(
-        'navigation__icon--active',
-        navIcon === clickedIcon
+  function updateHeaders(targetName) {
+    headers.forEach((header) => {
+      const headerName = header.dataset.name
+      header.classList.toggle('d-none', headerName !== targetName)
+    })
+  }
+
+  function updateNavigation(targetName) {
+    navItems.forEach((navItem) => {
+      const navName = navItem.dataset.name
+      navItem.classList.toggle(
+        'navigation__button--active',
+        navName === targetName
       )
     })
   }
