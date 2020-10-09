@@ -18,8 +18,7 @@ export default function setupCard() {
     })
   }
 
-  // ------ Select Answer Buttons and Answer Text------
-  /*  const showAnswerButton = getDataJS('show-answer-button')
+  /*   const showAnswerButton = getDataJS('show-answer-button')
   const hideAnswerButton = getDataJS('hide-answer-button')
   const answerText = getDataJS('answer-text')
 
